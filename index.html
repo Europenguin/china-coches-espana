@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>China en la industria del coche en España · Infografía 2026</title>
+<style>
+  :root{
+    --bg:#f2f3f1; --card:#ffffff; --ink:#11161c; --ink2:#39424c; --muted:#6b7681;
+    --line:#e3e6e8; --line2:#cfd5da;
+    --cn:#d11f33; --cn-soft:#fdecef; --es:#e8a700; --trad:#7d8b97; --trad-fill:#d5dbe0;
+    --blue:#1d3557; --green:#2f7d52;
+    --shadow:0 1px 2px rgba(16,24,32,.06),0 8px 24px rgba(16,24,32,.06);
+    --r:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:15px; line-height:1.45; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1400px;margin:0 auto;padding:0 24px 56px}
+  a{color:var(--blue)}
+
+  /* ---------- HERO ---------- */
+  .hero{background:linear-gradient(135deg,#151a21 0%,#20262e 55%,#2b1116 100%);color:#fff;padding:34px 0 30px;border-bottom:4px solid var(--cn)}
+  .hero .wrap{padding-bottom:0}
+  .kick{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#f3c6cb;font-weight:700}
+  .kick::before{content:"";width:26px;height:2px;background:var(--cn);display:block}
+  h1{font-size:clamp(28px,4.4vw,50px);line-height:1.04;margin:12px 0 8px;letter-spacing:-.02em;font-weight:800;max-width:20ch}
+  h1 em{font-style:normal;color:#ff5c6c}
+  .sub{color:#c3cad2;max-width:76ch;font-size:16px;margin:0 0 18px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:5px 12px;font-size:12.5px;color:#e7ebef;font-weight:600}
+  .chip b{color:#ff8f99}
+
+  /* ---------- KPIs ---------- */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:-26px 0 26px;position:relative;z-index:2}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 15px;box-shadow:var(--shadow)}
+  .kpi .lab{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .kpi .val{font-size:32px;font-weight:800;letter-spacing:-.02em;margin:6px 0 2px;line-height:1}
+  .kpi .val small{font-size:15px;font-weight:700;color:var(--muted);letter-spacing:0}
+  .kpi .note{font-size:12.5px;color:var(--ink2);line-height:1.35}
+  .kpi.hot .val{color:var(--cn)}
+  .spark{display:flex;align-items:flex-end;gap:5px;height:34px;margin:8px 0 4px}
+  .spark div{flex:1;background:var(--cn-soft);border-radius:3px 3px 0 0;position:relative;border-bottom:2px solid var(--cn)}
+  .spark div span{position:absolute;top:-15px;left:0;right:0;text-align:center;font-size:10.5px;font-weight:700;color:var(--cn)}
+
+  /* ---------- SECTIONS ---------- */
+  section{margin:34px 0 0}
+  .sec-h{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 14px}
+  .sec-h h2{font-size:21px;margin:0;letter-spacing:-.01em;font-weight:800}
+  .sec-h p{margin:0;color:var(--muted);font-size:13.5px}
+  .tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--cn);color:#fff;border-radius:5px;padding:3px 7px}
+
+  /* ---------- MAP ---------- */
+  .map-grid{display:grid;grid-template-columns:1fr 360px;gap:16px;align-items:start}
+  .map-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:14px 14px 6px;position:relative}
+  .map-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;padding:2px 4px 10px}
+  .filters{display:flex;flex-wrap:wrap;gap:6px}
+  .filters label{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line2);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:600;color:var(--ink2);cursor:pointer;background:#fbfcfc;user-select:none}
+  .filters input{accent-color:var(--cn);margin:0}
+  .btn{border:1px solid var(--line2);background:#fff;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;cursor:pointer;color:var(--ink2)}
+  .btn:hover{border-color:var(--cn);color:var(--cn)}
+  .stage{position:relative;width:100%}
+  .stage svg.map{width:100%;height:auto;display:block;overflow:visible}
+  .prov{fill:#eceef0;stroke:#fff;stroke-width:.9;transition:fill .15s}
+  .prov:hover{fill:#e2e6ea}
+  .inset-box{fill:none;stroke:var(--line2);stroke-width:1.2;stroke-dasharray:5 4}
+  .inset-lab{font-size:11px;fill:var(--muted);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  .mk{cursor:pointer}
+  .mk .hit{fill:transparent;stroke:none}
+  .mk .shp{stroke-width:2;transition:transform .12s}
+  .mk:hover .shp,.mk.sel .shp{stroke-width:3}
+  .mk.sel .halo{opacity:1}
+  .halo{opacity:0;fill:none;stroke:var(--cn);stroke-width:1.4;stroke-dasharray:3 3}
+  .labels{position:absolute;inset:0;pointer-events:none}
+  .lb{position:absolute;transform:translate(0,-50%);display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.86);border:1px solid rgba(0,0,0,.06);border-radius:7px;padding:2px 6px 2px 4px;font-size:11.5px;font-weight:700;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,.08);pointer-events:auto;cursor:pointer;line-height:1.25}
+  .lb:hover,.lb.sel{border-color:var(--cn);color:var(--cn)}
+  .lb.l{transform:translate(-100%,-50%)}
+  .lb.r{transform:translate(0,-50%)}
+  .lb .fls{display:inline-flex;gap:2px;align-items:center}
+  .lb .fls svg{border-radius:1.5px;box-shadow:0 0 0 .5px rgba(0,0,0,.18)}
+  .tip{position:absolute;z-index:9;background:#151a21;color:#fff;border-radius:10px;padding:9px 11px;font-size:12px;max-width:270px;pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .12s;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+  .tip.on{opacity:1;transform:translateY(0)}
+  .tip .t1{font-weight:800;font-size:13px;margin-bottom:2px}
+  .tip .t2{color:#aeb7c0;font-size:11.5px;margin-bottom:6px}
+  .tip .fls{display:inline-flex;gap:3px;vertical-align:middle}
+  .tip .t3{color:#e6eaee}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;padding:10px 6px 8px;border-top:1px solid var(--line);margin-top:6px;font-size:12px;color:var(--ink2)}
+  .lg{display:flex;align-items:center;gap:7px;font-weight:600}
+  .lg svg{flex:none}
+
+  /* ---------- PANEL ---------- */
+  .panel{display:flex;flex-direction:column;gap:14px;position:sticky;top:14px}
+  .p-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px}
+  .p-card h3{margin:0 0 4px;font-size:15.5px;letter-spacing:-.01em}
+  .p-card .where{font-size:12.5px;color:var(--muted);margin-bottom:9px}
+  .status{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:5px;padding:3px 7px;margin-bottom:9px}
+  .st-op{background:#e7f4ec;color:#1f6b45}
+  .st-ob{background:#fff4e2;color:#9a6206}
+  .st-an{background:var(--cn-soft);color:var(--cn)}
+  .fls{display:flex;gap:6px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+  .fl{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:var(--ink2);background:#f5f7f8;border:1px solid var(--line);border-radius:6px;padding:2px 7px 2px 4px}
+  .fl svg{border-radius:1.5px;box-shadow:0 0 0 .5px rgba(0,0,0,.2)}
+  .p-card p.desc{font-size:13.2px;color:var(--ink2);margin:0 0 10px}
+  .facts{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;font-size:12.6px;margin:0}
+  .facts dt{color:var(--muted);font-weight:700}
+  .facts dd{margin:0;color:var(--ink);font-weight:600}
+  .src{margin-top:11px;padding-top:9px;border-top:1px dashed var(--line2);font-size:11.4px;color:var(--muted)}
+  .empty{color:var(--muted);font-size:13px}
+  .idx{display:flex;flex-direction:column;gap:2px;max-height:326px;overflow:auto;padding-right:2px}
+  .idx button{display:flex;align-items:center;gap:8px;text-align:left;border:0;background:transparent;border-radius:8px;padding:7px 8px;cursor:pointer;font:inherit;font-size:12.7px;color:var(--ink2)}
+  .idx button:hover{background:#f5f7f8}
+  .idx button.sel{background:var(--cn-soft);color:var(--cn);font-weight:700}
+  .idx .fls{margin:0}
+  .idx .nm{flex:1}
+  .idx .yr{font-size:10.5px;font-weight:800;color:var(--muted);letter-spacing:.04em}
+  .idx button.sel .yr{color:var(--cn)}
+
+  /* ---------- CARDS ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .c3{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:15px 16px;border-top:3px solid var(--cn)}
+  .c3.t2{border-top-color:#f0873a}
+  .c3.t3{border-top-color:var(--blue)}
+  .c3 h4{margin:0 0 2px;font-size:14.5px;letter-spacing:-.01em}
+  .c3 .where{font-size:12px;color:var(--muted);margin-bottom:7px}
+  .c3 ul{margin:8px 0 0;padding-left:16px;font-size:12.6px;color:var(--ink2)}
+  .c3 li{margin-bottom:3px}
+  .grp-t{grid-column:1/-1;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+  .grp-keep{display:contents}
+
+  /* ---------- CHARTS ---------- */
+  .charts{display:grid;grid-template-columns:1.15fr 1fr;gap:16px}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:17px 18px}
+  .box h3{margin:0 0 3px;font-size:15.5px}
+  .box .hint{font-size:12.4px;color:var(--muted);margin:0 0 16px}
+  .bars{display:flex;align-items:flex-end;gap:18px;height:190px;padding-top:14px;border-bottom:1.5px solid var(--line2)}
+  .bcol{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
+  .bcol .pct{font-size:15px;font-weight:800;color:var(--cn);margin-bottom:4px}
+  .bcol .bar{width:100%;background:linear-gradient(180deg,#e8455a,#c41a2e);border-radius:6px 6px 0 0}
+  .bcol.alt .bar{background:linear-gradient(180deg,#f4a3b0,#e8455a)}
+  .bx{display:flex;gap:18px;margin-top:8px}
+  .bx div{flex:1;text-align:center;font-size:12.3px;color:var(--ink2);font-weight:700}
+  .bx div span{display:block;font-weight:600;color:var(--muted);font-size:11.3px}
+  .hbar{margin-bottom:11px}
+  .hbar .r1{display:flex;justify-content:space-between;font-size:12.7px;font-weight:700;margin-bottom:4px}
+  .hbar .r1 span:last-child{color:var(--cn)}
+  .hbar .tr{height:12px;background:#eef0f2;border-radius:99px;overflow:hidden}
+  .hbar .fl2{height:100%;background:linear-gradient(90deg,#d11f33,#f26a7a);border-radius:99px}
+  .hbar .who{display:flex;align-items:center;gap:6px}
+
+  /* ---------- CAPACIDAD INSTALADA ---------- */
+  .charts.cap-row{grid-template-columns:1fr}
+  .sec-cap{margin-top:26px}
+  .capleg{display:flex;flex-wrap:wrap;gap:18px;margin:0 0 4px;font-size:12.2px;color:var(--ink2);font-weight:700}
+  .capleg i{width:12px;height:12px;border-radius:3px;display:inline-block;margin-right:6px;vertical-align:-1px}
+  .cbars{display:flex;align-items:flex-end;gap:clamp(8px,2.6vw,40px);height:184px;padding-top:20px;border-bottom:1.5px solid var(--line2)}
+  .cgrp{flex:1;display:flex;align-items:flex-end;justify-content:center;gap:7px;height:100%}
+  .cbcol{flex:1;max-width:78px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+  .cv{font-size:13.5px;font-weight:800;margin-bottom:5px;color:var(--ink2);white-space:nowrap}
+  .cv.cn{color:var(--cn)}
+  .cbar{width:100%;border-radius:6px 6px 0 0;min-height:4px}
+  .cbar.eu{background:linear-gradient(180deg,#9aa7b3,var(--trad))}
+  .cbar.cn{background:linear-gradient(180deg,#e8455a,var(--cn))}
+
+  /* ---------- TIMELINE ---------- */
+  .tl{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:24px 18px 18px;overflow-x:auto}
+  .tl .line{position:absolute;left:34px;right:34px;top:64px;height:2px;background:linear-gradient(90deg,var(--line2) 0%,var(--line2) 46%,var(--cn) 46%,var(--cn) 100%)}
+  .tl .row{display:grid;grid-template-columns:repeat(7,minmax(158px,1fr));gap:14px;position:relative;min-width:1100px}
+  .tl .it{position:relative;padding-top:80px}
+  .tl .it::before{content:"";position:absolute;top:57px;left:0;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--line2)}
+  .tl .it.hot::before{border-color:var(--cn);background:var(--cn);box-shadow:0 0 0 4px var(--cn-soft)}
+  .tl .yr{position:absolute;top:14px;left:0;font-size:17px;font-weight:800;letter-spacing:-.01em}
+  .tl .it.hot .yr{color:var(--cn)}
+  .tl .tt{font-size:13px;font-weight:700;margin-bottom:3px}
+  .tl .dd{font-size:12.2px;color:var(--ink2);line-height:1.4}
+
+  /* ---------- FOOTER ---------- */
+  footer{margin-top:38px;border-top:1px solid var(--line2);padding-top:16px;font-size:12.2px;color:var(--muted)}
+  footer h4{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin:0 0 7px}
+  .fgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+  footer ul{margin:0;padding-left:17px;columns:2;column-gap:22px}
+  footer li{margin-bottom:3px;break-inside:avoid}
+
+  @media (max-width:1150px){
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .map-grid{grid-template-columns:1fr}
+    .panel{position:static}
+    .cards{grid-template-columns:repeat(2,1fr)}
+    .charts{grid-template-columns:1fr}
+    .tl .row{min-width:0;grid-template-columns:repeat(2,1fr);gap:18px 22px}
+    .tl .line{display:none}
+    .tl .it{padding-top:0}
+    .tl .it::before{display:none}
+    .tl .yr{position:static;display:block;margin-bottom:4px}
+  }
+  @media (max-width:680px){
+    .kpis,.cards{grid-template-columns:1fr}
+    .wrap{padding:0 14px 40px}
+    footer ul{columns:1}
+    .labels{display:none}
+    .tl .row{grid-template-columns:1fr}
+  }
+  @page{size:210mm 297mm;margin:12mm 11mm 14mm}
+  @media print{
+    body{background:#fff;margin:0}
+    .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .btn,.filters,.tip{display:none}
+    .panel{position:static}
+    .wrap{padding:0}
+
+    /* portada compacta */
+    .hero .wrap{padding-top:30px;padding-bottom:30px}
+    .hero h1{font-size:30px;line-height:1.15}
+    .hero .sub{font-size:12.5px;margin-bottom:10px}
+    .hero .chips{gap:7px}
+
+    /* KPIs y tarjetas en columnas: los bloques nunca se parten */
+    .kpis{display:block;columns:2;column-gap:16px;margin-top:30px}
+    .kpi{break-inside:avoid;page-break-inside:avoid;margin:0 0 16px;padding:18px 18px}
+
+    .map-grid{display:block}
+    .map-card,.panel,.idx{break-inside:avoid;page-break-inside:avoid;margin-bottom:14px}
+    .idx{display:block;max-height:none;overflow:visible;columns:2;column-gap:18px}
+    .idx button{break-inside:avoid;page-break-inside:avoid}
+
+    .cards,.charts{display:block;columns:2;column-gap:16px}
+    .charts.cap-row{columns:1}
+    .c3,.box{break-inside:avoid;page-break-inside:avoid;margin:0 0 16px}
+    .sec-cap{margin-top:26px}
+    .cbars{height:100px;gap:clamp(8px,2vw,26px)}
+
+    .sec-h{break-inside:avoid;page-break-inside:avoid;page-break-after:avoid}
+    .grp-t,.grp-keep{break-inside:avoid;page-break-inside:avoid}
+    .grp-keep{display:block}
+    .sec-mapa{break-before:page;page-break-before:always}
+    .sec-cap{break-before:page;page-break-before:always;margin-top:0}
+    .sec-tl{margin-top:0}
+
+    .tl{overflow:visible}
+    .tl .row{display:block;columns:2;column-gap:26px;min-width:0}
+    .tl .line{display:none}
+    .tl .it{break-inside:avoid;page-break-inside:avoid;padding-top:0;margin-bottom:16px}
+    .tl .it::before{display:none}
+    .tl .yr{position:static;display:block;margin-bottom:4px}
+    .tl .dd{font-size:10.4px}
+    footer{break-inside:avoid;page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kick">Infografía · datos a 30 de septiembre de 2026</div>
+    <h1>China se fabrica <em>coches y baterías</em> en España</h1>
+    <p class="sub">Mapa de las principales factorías de vehículos y componentes de España con capital chino —en operación y anunciadas para 2027-2028— frente a la industria tradicional, con la bandera del país propietario de cada empresa.</p>
+    <div class="chips">
+      <div class="chip"><b>14</b> proyectos con capital chino</div>
+      <div class="chip"><b>≈ 7.000 M€</b> de inversión anunciada</div>
+      <div class="chip">Cuota de marcas chinas: <b>16,65%</b> en julio de 2026</div>
+      <div class="chip">España: <b>2º</b> fabricante de coches de Europa</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- KPIs -->
+  <section class="kpis" style="margin-top:26px">
+    <div class="kpi hot">
+      <div class="lab">Cuota de marcas chinas en España</div>
+      <div class="val">14,7% <small>ene–jul 2026</small></div>
+      <div class="spark">
+        <div style="height:40%"><span>6,6%</span></div>
+        <div style="height:69%"><span>11,5%</span></div>
+        <div style="height:88%"><span>14,7%</span></div>
+        <div style="height:100%"><span>16,7%</span></div>
+      </div>
+      <div class="note">2024 · 2025 · 2026 acumulado · récord de julio 2026 (16,65%).</div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Presencia industrial china</div>
+      <div class="val">14 <small>proyectos</small></div>
+      <div class="note"><b>6</b> factorías de vehículos · <b>5</b> de baterías · <b>3</b> de componentes. Ocho comunidades autónomas.</div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Inversión anunciada con capital chino</div>
+      <div class="val">≈ 7.000 <small>M€</small></div>
+      <div class="note">CATL-Zaragoza suma 4.100 M€. En sep-2026 Gotion pagó 1.100 M€ por el 49% de PowerCo-Sagunto.</div>
+    </div>
+    <div class="kpi hot">
+      <div class="lab">Peso de China en la producción española</div>
+      <div class="val">3% → 13% <small>en 5 años</small></div>
+      <div class="note">Proyección sobre la producción de fábricas españolas a 2031 (Economía Digital, ago-2026).</div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <section class="sec-mapa">
+    <div class="sec-h">
+      <span class="tag">Mapa</span>
+      <h2>Plantas de vehículos, baterías y componentes</h2>
+      <p>Forma = tipo de planta · color = capital · trazo discontinuo = proyecto o anuncio. Pasa el ratón o pulsa un punto.</p>
+    </div>
+
+    <div class="map-grid">
+      <div class="map-card">
+        <div class="map-top">
+          <div class="filters" id="filters">
+            <label><input type="checkbox" data-f="vehiculo" checked> Vehículos</label>
+            <label><input type="checkbox" data-f="bateria" checked> Baterías</label>
+            <label><input type="checkbox" data-f="componente" checked> Componentes</label>
+            <label><input type="checkbox" data-f="cn" checked> Con capital chino</label>
+            <label><input type="checkbox" data-f="trad" checked> Industria tradicional</label>
+            <label><input type="checkbox" data-f="labels" checked> Etiquetas</label>
+          </div>
+          <button class="btn" onclick="window.print()">Guardar en PDF / imprimir</button>
+        </div>
+
+        <div class="stage" id="stage">
+          <svg class="map" id="map" preserveAspectRatio="xMidYMid meet"></svg>
+          <div class="labels" id="labels"></div>
+          <div class="tip" id="tip"></div>
+        </div>
+
+        <div class="legend">
+          <span class="lg"><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="#d11f33" stroke="#fff" stroke-width="2"/></svg> Capital chino · en operación</span>
+          <span class="lg"><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="#fff" stroke="#d11f33" stroke-width="2" stroke-dasharray="3 2.4"/></svg> Proyecto / en obra</span>
+          <span class="lg"><svg width="16" height="16"><circle cx="8" cy="8" r="6" fill="#d5dbe0" stroke="#7d8b97" stroke-width="2"/></svg> Industria tradicional</span>
+          <span class="lg"><svg width="16" height="16"><circle cx="8" cy="8" r="5.5" fill="none" stroke="#6b7681" stroke-width="2"/></svg> ● Vehículos</span>
+          <span class="lg"><svg width="16" height="16"><rect x="4" y="4" width="8" height="8" fill="none" stroke="#6b7681" stroke-width="2" transform="rotate(45 8 8)"/></svg> ◆ Baterías</span>
+          <span class="lg"><svg width="16" height="16"><polygon points="8,3.5 13.5,13 2.5,13" fill="none" stroke="#6b7681" stroke-width="2" stroke-linejoin="round"/></svg> ▲ Componentes</span>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <div class="p-card" id="detail">
+          <h3>Selecciona una planta</h3>
+          <p class="empty">En el mapa hay <b>14 proyectos con capital chino</b> y <b>8 factorías tradicionales</b>. Pulsa cualquier punto o una fila del índice para ver datos, propiedad y banderas.</p>
+        </div>
+        <div class="p-card">
+          <h3>Índice de proyectos chinos</h3>
+          <div class="where">Ordenados por fecha de arranque</div>
+          <div class="idx" id="idx"></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- DETALLE -->
+  <section class="sec-cards">
+    <div class="sec-h">
+      <span class="tag">Proyectos</span>
+      <h2>Qué se fabrica, dónde y con quién</h2>
+      <p>Banderas = país de la matriz propietaria de cada empresa.</p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <!-- GRÁFICOS -->
+  <section class="sec-charts">
+    <div class="sec-h">
+      <span class="tag">Crecimiento</span>
+      <h2>Del 6,6% al 16,65% en dos años</h2>
+      <p>Cuota de mercado de las marcas de origen o vinculo chino sobre turismos matriculados en España.</p>
+    </div>
+    <div class="charts">
+      <div class="box">
+        <h3>Cuota de mercado de las marcas chinas</h3>
+        <p class="hint">Matriculaciones de turismos en España. El dato de 2026 (14,71%) corresponde a enero–julio; el de 16,65% es el récord mensual de julio.</p>
+        <div class="bars">
+          <div class="bcol"><div class="pct">6,64%</div><div class="bar" style="height:40%"></div></div>
+          <div class="bcol"><div class="pct">11,54%</div><div class="bar" style="height:69%"></div></div>
+          <div class="bcol alt"><div class="pct">14,71%</div><div class="bar" style="height:88%"></div></div>
+          <div class="bcol alt"><div class="pct">16,65%</div><div class="bar" style="height:100%"></div></div>
+        </div>
+        <div class="bx">
+          <div>2024<span>1º año de Chery-Ebro</span></div>
+          <div>2025<span>132.554 uds · 11,54%</span></div>
+          <div>ene–jul 2026<span>110.257 uds</span></div>
+          <div>julio 2026<span>récord mensual</span></div>
+        </div>
+      </div>
+      <div class="box">
+        <h3>Marcas chinas más vendidas · ene–jul 2026</h3>
+        <p class="hint">Unidades matriculadas en España. Ebro —marca española reactivada con Chery— se incluye por su vínculo industrial con China.</p>
+        <div id="brands"></div>
+        <p class="hint" style="margin:14px 0 0">En 2026 ya operan <b>21 marcas chinas</b> en España; las tres primeras (MG, BYD y Omoda &amp; Jaecoo) suman el 90% de sus ventas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPACIDAD INSTALADA -->
+  <section class="sec-cap">
+    <div class="sec-h">
+      <span class="tag">Producción</span>
+      <h2>Capacidad instalada: del 1,6% al 22% con capital chino</h2>
+      <p>Capacidad anual de fabricación de turismos en España (miles de uds/año): industria europea frente a proyectos chino-europeos, hoy y con los anuncios hasta 2030.</p>
+    </div>
+    <div class="charts cap-row">
+      <div class="box">
+        <h3>Sin capital chino vs. con capital chino</h3>
+        <p class="hint">Miles de vehículos/año. «Con capital chino» suma Ebro–Chery, la JV Ford–Geely de Almussafes y SAIC en Ferrol. Estimación propia a partir de la capacidad declarada o el máximo histórico de cada planta (Martorell 600, Vigo 600, Renault 500, Figueruelas 400, Almussafes 400, VW Navarra 300, Mercedes Vitoria 150, Villaverde 100 mil uds/año).</p>
+        <div class="capleg">
+          <span><i style="background:linear-gradient(180deg,#9aa7b3,#7d8b97)"></i>Sin capital chino (UE y EE. UU.)</span>
+          <span><i style="background:linear-gradient(180deg,#e8455a,#d11f33)"></i>Con capital chino (chino-europeas)</span>
+        </div>
+        <div class="cbars">
+          <div class="cgrp">
+            <div class="cbcol"><div class="cv">3.050</div><div class="cbar eu" style="height:98%"></div></div>
+            <div class="cbcol"><div class="cv cn">50</div><div class="cbar cn" style="height:3%"></div></div>
+          </div>
+          <div class="cgrp">
+            <div class="cbcol"><div class="cv">2.650</div><div class="cbar eu" style="height:86%"></div></div>
+            <div class="cbcol"><div class="cv cn">500</div><div class="cbar cn" style="height:16%"></div></div>
+          </div>
+          <div class="cgrp">
+            <div class="cbcol"><div class="cv">2.650</div><div class="cbar eu" style="height:86%"></div></div>
+            <div class="cbcol"><div class="cv cn">720</div><div class="cbar cn" style="height:23%"></div></div>
+          </div>
+          <div class="cgrp">
+            <div class="cbcol"><div class="cv">2.650</div><div class="cbar eu" style="height:86%"></div></div>
+            <div class="cbcol"><div class="cv cn">770</div><div class="cbar cn" style="height:25%"></div></div>
+          </div>
+        </div>
+        <div class="bx">
+          <div>2026<span>cap. china: 1,6%</span></div>
+          <div>2027<span>cap. china: 16%</span></div>
+          <div>2028<span>cap. china: 21%</span></div>
+          <div>2030<span>cap. china: 22%</span></div>
+        </div>
+        <p class="hint" style="margin:13px 0 0">El salto de 2027 no crea capacidad nueva: los 400.000 uds/año de Almussafes pasan de Ford a la JV Ford–Geely (66/34), que llega a 500.000 con los modelos de 2028.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRONOLOGIA -->
+  <section class="sec-tl">
+    <div class="sec-h">
+      <span class="tag">Cronología</span>
+      <h2>2024 – 2031: cómo llega la industria china</h2>
+      <p>Del primer-kit ensamblado en Barcelona a la pretensión de un 13% de la producción nacional.</p>
+    </div>
+    <div class="tl">
+      <div class="line"></div>
+      <div class="row">
+        <div class="it hot"><div class="yr">2024</div><div class="tt">Chery aterriza</div><div class="dd">Abril: alianza Chery–EV Motors por la antigua Nissan de la Zona Franca. Noviembre: arranca la producción de Ebro. Diciembre: CATL y Stellantis anuncian la gigafactoría de Zaragoza (4.100 M€).</div></div>
+        <div class="it hot"><div class="yr">2025</div><div class="tt">Primera piedra y salto de cuota</div><div class="dd">Noviembre: CATL pone la primera piedra en Figueruelas. Diciembre: Fagor Ederlan y Duoli crean Lieder (Borja) y Santana firma con BAIC. Las marcas chinas alcanzan el 11,54% del mercado.</div></div>
+        <div class="it hot"><div class="yr">2026</div><div class="tt">La oleada</div><div class="dd">Ebro triplica su capacidad con la línea M1 · Leapmotor arranca el B10 en Figueruelas · abre Mallén · SAIC elige Ferrol (200 M€) · Ford y Geely firman su JV en Almussafes · TDG arranca en Zaragoza · Gotion compra el 49% de la gigafactoría de Sagunto (1.100 M€) · récord: 16,65% en julio.</div></div>
+        <div class="it hot"><div class="yr">2027</div><div class="tt">Celdas y JV</div><div class="dd">CATL arranca la producción de celdas en el 1T. La sociedad Ford-Geely entra en operación. Ebro alcanza 100.000 vehículos de capacidad. Gotion avanza en Valladolid y Sagunto arranca con dos bloques (30 GWh).</div></div>
+        <div class="it"><div class="yr">2028</div><div class="tt">Nuevas plantas y modelos</div><div class="dd">SAIC arranca en Ferrol (hasta 120.000 uds/año) · Leapmotor produce en Villaverde · salen de Almussafes 3 Ford y 2 SUV eléctricos Geely · Navalmoral fabrica sus primeras celdas.</div></div>
+        <div class="it"><div class="yr">2029</div><div class="tt">Escala</div><div class="dd">Ebro apunta a 150.000 vehículos anuales en Barcelona. Se completan las fases de las gigafactorías de Zaragoza, Navalmoral y Valladolid.</div></div>
+        <div class="it"><div class="yr">2030·31</div><div class="tt">Nuevo mapa</div><div class="dd">Ebro aspira a 200.000 uds. El peso de las fábricas con capital chino en la producción española se proyecta del 3% al 13% en cinco años.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fgrid">
+      <div>
+        <h4>Fuentes</h4>
+        <ul>
+          <li>El País (24/04/2026, 11/05/2026, 26/11/2025)</li>
+          <li>Expansión (01/06/2026, 22/06/2026, 26/06/2026, 11/08/2026, 29/09/2026)</li>
+          <li>Reuters (14/11/2024, 07/05/2026, 27/07/2026)</li>
+          <li>Europa Press (02/07/2026) y Voz Pópuli</li>
+          <li>Faro de Vigo (03/06/2026) y La Voz de Galicia</li>
+          <li>Comunicados: Stellantis, CATL, Geely, Ford, MG/SAIC, Ebro Motors</li>
+          <li>Gobierno de Aragón, Junta de Andalucía, Xunta de Galicia</li>
+          <li>Anfac, Sernauto, ACEA, datos de matriculación</li>
+          <li>Electrive, Forococheselectricos, MotorPoint, Autonoción</li>
+          <li>Economía Digital (01/08/2026), elEconomista (28/09/2026), Cadena SER, RTVE</li>
+          <li>Capacidad de plantas: El Periódico (12/12/2025), Cinco Días (12/06/2026), Expansión/Reuters (23/05/2024), Volkswagen España (10/01/2025), La Vanguardia (20/11/2025), Motorpasión y Expansión (23/07/2026), Nikkei, La Voz de Galicia y La Tribuna</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Notas metodológicas</h4>
+        <p>Las coordenadas son municipales o aproximadas para su localización en el mapa. «Capital chino» incluye propiedad total, joint ventures y acuerdos de producción con participación china. Las cifras de cuota de mercado varían según la fuente: algunos recuentos incluyen marcas con vínculo industrial chino (Ebro, DR) y otros solo marcas de origen. Datos recopilados de fuentes públicas a 30 de septiembre de 2026; los proyectos anunciados están sujetos a aprobación administrativa. En septiembre de 2026 Gotion High-Tech adquirió el 49% de la gigafactoría de PowerCo (Volkswagen) en Sagunto, que se contabiliza desde entonces como proyecto con capital chino.</p>
+        <p>Mapa: límites provinciales a partir de datos abiertos (GeoJSON de provincias españolas), proyección Mercator con recuadro de Canarias no escala.</p>
+        <p>Capacidad instalada: estimación propia, no existe dato oficial por planta. Se parte de la capacidad declarada por el fabricante o, en su defecto, del máximo histórico reciente de producción, y se mantiene constante salvo anuncio público de cambio. «Con capital chino» contabiliza cada planta por su propietario en cada año: Almussafes contaba en la columna europea hasta la entrada en operación de la JV Ford–Geely (1S 2027). Se excluyen Santana–BAIC, el Leapmotor de Figueruelas y Liux por no publicar capacidad, así como los utilitarios industriales de Iveco y Stellantis.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="mapa-espana.js"></script>
+<script>
+/* ============ BANDERAS ============ */
+function starPts(cx,cy,r,rot){
+  const p=[];for(let i=0;i<10;i++){const rr=i%2?r*0.4:r;const a=(Math.PI/5)*i-Math.PI/2+rot;p.push((cx+rr*Math.cos(a)).toFixed(2)+','+(cy+rr*Math.sin(a)).toFixed(2));}
+  return p.join(' ');
+}
+const FLAGS={
+  ES:'<rect width="18" height="12" fill="#c60b1e"/><rect y="3" width="18" height="6" fill="#ffc400"/>',
+  CN:'<rect width="18" height="12" fill="#de2910"/><polygon points="'+starPts(4,3.4,2.4,0)+'" fill="#ffde00"/><polygon points="'+starPts(8,1.5,0.85,0)+'" fill="#ffde00"/><polygon points="'+starPts(9.4,3,0.85,0)+'" fill="#ffde00"/><polygon points="'+starPts(9.4,4.8,0.85,0)+'" fill="#ffde00"/><polygon points="'+starPts(8,6.2,0.85,0)+'" fill="#ffde00"/>',
+  DE:'<rect width="18" height="4" fill="#111"/><rect y="4" width="18" height="4" fill="#d00"/><rect y="8" width="18" height="4" fill="#ffce00"/>',
+  FR:'<rect width="6" height="12" fill="#0b2b6b"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#d00"/>',
+  NL:'<rect width="18" height="4" fill="#ae1c28"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#21468b"/>',
+  US:'<rect width="18" height="12" fill="#fff"/><g fill="#b22234"><rect y="0" width="18" height="1.38"/><rect y="2.77" width="18" height="1.38"/><rect y="5.54" width="18" height="1.38"/><rect y="8.31" width="18" height="1.38"/><rect y="11.08" width="18" height="0.92"/></g><rect width="7.5" height="6.46" fill="#3c3b6e"/>',
+  GB:'<rect width="18" height="12" fill="#012169"/><path d="M0,0 L18,12 M18,0 L0,12" stroke="#fff" stroke-width="2.6"/><path d="M0,0 L18,12 M18,0 L0,12" stroke="#c8102e" stroke-width="1.1"/><path d="M9,0 V12 M0,6 H18" stroke="#fff" stroke-width="4"/><path d="M9,0 V12 M0,6 H18" stroke="#c8102e" stroke-width="2.2"/>',
+  IT:'<rect width="6" height="12" fill="#008c45"/><rect x="6" width="6" height="12" fill="#f4f5f0"/><rect x="12" width="6" height="12" fill="#cd212a"/>',
+  JP:'<rect width="18" height="12" fill="#fff"/><circle cx="9" cy="6" r="3.4" fill="#bc002d"/>'
+};
+const COUNTRY={ES:'España',CN:'China',DE:'Alemania',FR:'Francia',NL:'Países Bajos',US:'Estados Unidos',GB:'Reino Unido',IT:'Italia',JP:'Japón'};
+function flagSVG(code,w){w=w||18;const h=w*2/3;
+  return '<svg width="'+w+'" height="'+h.toFixed(1)+'" viewBox="0 0 18 12" role="img" aria-label="'+(COUNTRY[code]||code)+'">'+FLAGS[code]+'</svg>';}
+function flagRow(codes,w){return codes.map(c=>'<span class="fl">'+flagSVG(c,w||18)+(COUNTRY[c]?'<span>'+COUNTRY[c]+'</span>':'')+'</span>').join('');}
+function flagMini(codes,w){return '<span class="fls">'+codes.map(c=>flagSVG(c,w||16)).join('')+'</span>';}
+
+/* ============ DATOS ============ */
+const SITES=[
+ {id:'ebro',n:'Ebro Factory (ex-Nissan)',short:'Ebro · Chery',city:'Barcelona · Zona Franca',ccaa:'Cataluña',lat:41.34,lon:2.15,t:'vehiculo',cn:1,st:'operativa',stl:'En operación',flags:['ES','CN'],
+  desc:'Reindustrialización de la antigua planta de Nissan por Ebro-EV Motors (60%) y la china Chery (40%). Ensambla la marca española Ebro y las marcas chinas Omoda y Jaecoo.',
+  f:[['Inversión','> 150 M€ desde 2024'],['Empleo','1.530 en planta · 2.045 en el grupo'],['Capacidad','50.000 uds/año a finales de 2026'],['Horizonte','100.000 (2027) · 150.000 (2029)'],['Modelos','Ebro s400, s700, s800, s900 · Omoda y Jaecoo'],['Ventas 2025','14.148 unidades']],
+  src:'Ebro Motors · Expansión · Invest in Spain',lp:[13,-6,'r']},
+ {id:'leap',n:'Stellantis Figueruelas (Leapmotor)',short:'Leapmotor',city:'Figueruelas · Zaragoza',ccaa:'Aragón',lat:41.545,lon:-0.79,t:'vehiculo',cn:1,st:'operativa',stl:'Arranque 2S 2026',flags:['CN','NL'],
+  desc:'La planta de Stellantis abre su línea a Leapmotor, la marca china de la que Stellantis posee el 21% y cuya comercialización europea gestiona la JV Leapmotor International (51/49).',
+  f:[['Modelos','B10 (2S 2026) · B05, B03X y A05 desde 2027'],['También','Opel C-SUV eléctrico desde 2028'],['Inversión','≈ 200 M€'],['Producción de la planta','372.000 uds (2024)']],
+  src:'Stellantis · Expansión · electrive',lp:[13,-12,'r']},
+ {id:'catl',n:'Gigafactoría CATL–Stellantis',short:'CATL · gigafactoría',city:'Figueruelas · Zaragoza',ccaa:'Aragón',lat:41.49,lon:-0.87,t:'bateria',cn:1,st:'construccion',stl:'En obra',flags:['CN','NL'],
+  desc:'Contemporary Star Energy, JV 50/50 de CATL (China) y Stellantis para celdas LFP. Es la mayor inversión industrial china registrada en España.',
+  f:[['Inversión','4.100 M€'],['Capacidad','50 GWh (ampliable a 60)'],['Empleo','4.000 directos'],['Superficie','89 hectáreas'],['Obra','500 personas, 172 llegadas de China (pico 1.700)'],['Producción','1T de 2027 · >80% renovable']],
+  src:'CATL · Stellantis · El País · Reuters · Gobierno de Aragón',lp:[13,16,'r']},
+ {id:'mallen',n:'Leapmotor International · baterías',short:'Mallén',city:'Mallén · Zaragoza',ccaa:'Aragón',lat:41.76,lon:-1.66,t:'bateria',cn:1,st:'operativa',stl:'En operación 2026',flags:['CN','NL'],
+  desc:'Planta de ensamblaje de módulos de batería de Leapmotor International, con tecnología china y ejecución industrial europea.',
+  f:[['Superficie','19.000 m² edificados de 34.000'],['Producto','Módulos LFP Pro y ProMax'],['Destino','Plataforma B de Figueruelas'],['Apertura','2026']],
+  src:'Leapmotor International · Invest in Spain',lp:null},
+ {id:'borja',n:'Lieder Automotive',short:'Borja (Lieder)',city:'Borja · Zaragoza',ccaa:'Aragón',lat:41.86,lon:-1.53,t:'componente',cn:1,st:'operativa',stl:'Inaugurada 2026',flags:['ES','CN'],
+  desc:'JV entre la cooperativa vasca Fagor Ederlan y la china Duoli Technology: reabre la planta de Fagor Ederlan en Borja para fabricar componentes de chasis para Leapmotor.',
+  f:[['Empleo','Más de 170 nuevos puestos'],['Destino','Leapmotor B10 (Figueruelas)'],['Apoyo','Perte VEC'],['Arranque','Sep-2026']],
+  src:'Fagor Ederlan · La Tribuna de Automoción',lp:null},
+ {id:'tdg',n:'TDG Ibernavitas',short:'TDG Ibernavitas',city:'PLAZA · Zaragoza',ccaa:'Aragón',lat:41.68,lon:-0.94,t:'componente',cn:1,st:'operativa',stl:'1ª línea abierta 2026',flags:['CN','ES'],
+  desc:'Alianza del grupo tecnológico chino TDG con la aragonesa Zeumat: ensambla sistemas de almacenamiento de energía y prevé fabricar celdas.',
+  f:[['Plan de inversión','> 120 M€ en 5 años'],['Empleo','Hasta 800 en 5 años (50 hoy)'],['Producto','Baterías de almacenamiento · celdas en fases futuras']],
+  src:'El Periódico de Aragón',lp:null},
+ {id:'villaverde',n:'Stellantis Villaverde (Leapmotor)',short:'Villaverde (Leapmotor)',city:'Villaverde · Madrid',ccaa:'Madrid',lat:40.35,lon:-3.69,t:'vehiculo',cn:1,st:'anunciada',stl:'Anunciada · 1S 2028',flags:['NL','CN'],
+  desc:'Stellantis cederá espacio —y quizá la propiedad— a Leapmotor cuando termine la producción del Citroën C4: un nuevo modelo eléctrico chino desde el primer semestre de 2028.',
+  f:[['Hoy','Citroën C4 y C4 X, Audi A1'],['Futuro','Modelo eléctrico Leapmotor desde 1S 2028'],['Venderá','La planta podría pasar a la filial española de LPMI']],
+  src:'Invest in Spain · El País · Stellantis',lp:[-13,0,'l']},
+ {id:'ferrol',n:'SAIC · MG (primera planta europea)',short:'Ferrol · SAIC-MG',city:'Puerto Exterior de Ferrol',ccaa:'Galicia',lat:43.45,lon:-8.16,t:'vehiculo',cn:1,st:'anunciada',stl:'Anunciada · 2028',flags:['CN'],
+  desc:'Primera fábrica de SAIC (matriz de MG) en el continente europeo: ensamblaje en formato CKD de vehículos eléctricos e híbridos junto al puerto exterior de Ferrol.',
+  f:[['Inversión','≈ 200 M€'],['Capacidad','Hasta 120.000 uds/año (fase 2)'],['Empleo','+2.000 directos (540 producción y 460 logística en la 1ª fase)'],['Producción','2028'],['Trámite','Proyecto industrial estratégico · información pública en jun-2026']],
+  src:'MG/SAIC · Expansión · La Voz de Galicia · Xunta de Galicia',lp:[13,-4,'r']},
+ {id:'almussafes',n:'Ford–Geely · Almussafes',short:'Ford-Geely (Valencia)',city:'Almussafes · Valencia',ccaa:'C. Valenciana',lat:39.47,lon:-0.42,t:'vehiculo',cn:1,st:'anunciada',stl:'JV anunciada · 2028',flags:['US','CN'],
+  desc:'Joint venture de Ford (66%) y Geely (34%) para compartir la planta valenciana: tres modelos multienergía Ford y dos SUV eléctricos Geely desde 2028.',
+  f:[['Sociedad','Arranque previsto en el 1S de 2027'],['Modelos','Bronco + 2 Ford · 2 Geely eléctricos (2028)'],['Capacidad','Hasta 500.000 uds/año'],['Empleo','1.800 contrataciones hasta 2028 · 4.142 → ~6.000'],['Hoy','Ford Kuga (85.000 uds previstas en 2026)']],
+  src:'Geely · Ford · Reuters · RTVE · La Moncloa',lp:[13,5,'r']},
+ {id:'linares',n:'Santana Motors · BAIC',short:'Santana · BAIC',city:'Linares · Jaén',ccaa:'Andalucía',lat:38.09,lon:-3.64,t:'vehiculo',cn:1,st:'operativa',stl:'En operación',flags:['ES','CN'],
+  desc:'La histórica fábrica de Santana vuelve a producir con apoyo chino: pick-up Santana y, en formato SKD, cinco SUV de BAIC y el eléctrico JAC E30X.',
+  f:[['Modelos','Santana 400 (diésel y PHEV), Cajal, 5 SUV BAIC (2026-2028), JAC E30X'],['Socios chinos','BAIC · Zhengzhou Nissan · Anhui Coronet'],['Empleo','Reactivación de la planta desde 2025']],
+  src:'Expansión (05/12/2025) · Junta de Andalucía',lp:[13,2,'r']},
+ {id:'linares-c',n:'Desay SV · Coronet · HRC',short:'Linares · componentes',city:'Parque Santana · Jaén',ccaa:'Andalucía',lat:38.16,lon:-3.52,t:'componente',cn:1,st:'operativa',stl:'Arranque 2026',flags:['CN'],
+  desc:'Tres empresas chinas se instalan en el Parque Empresarial Santana de Linares: pantallas y sistemas de infoentretenimiento, componentes y baterías.',
+  f:[['Inversión inicial','≈ 50 M€ (Desay y Coronet)'],['Empleo','≈ 500 puestos'],['Desay SV','1,5 millones de unidades/año y 300 trabajadores en 2028']],
+  src:'Junta de Andalucía · Andalucía TRADE',lp:null},
+ {id:'navalmoral',n:'Envision AESC',short:'Envision AESC',city:'Navalmoral de la Mata · Cáceres',ccaa:'Extremadura',lat:39.84,lon:-5.61,t:'bateria',cn:1,st:'construccion',stl:'En tramitación',flags:['CN','JP'],
+  desc:'Gigafactoría de celdas LFP de Envision AESC (grupo chino Envision), en fase de permisos tras revisar el proyecto para adaptarlo al mercado.',
+  f:[['Inversión','977 M€ (plan revisado)'],['Capacidad','12 GWh'],['Empleo','900 directos'],['Calendario','Módulos y packs: sep-2027 · celdas: dic-2028'],['Estado','Pendiente de declaración de impacto ambiental (sep-2026)']],
+  src:'Junta de Extremadura · Europa Press · El Periódico de Extremadura',lp:[-13,11,'l']},
+ {id:'gotion',n:'Gotion High-Tech (Valladolid)',short:'Gotion (Valladolid)',city:'Valladolid',ccaa:'Castilla y León',lat:41.71,lon:-4.87,t:'bateria',cn:1,st:'anunciada',stl:'Anunciada',flags:['CN'],
+  desc:'El fabricante chino de celdas Gotion —que absorbió a la eslovaca InoBat— planea dos plantas de baterías en Valladolid con ayuda del Perte VEC.',
+  f:[['Inversión','> 940 M€ en dos plantas'],['Ayudas','92 M€ provisionales del Perte VEC'],['Contexto','Autonomía de producción de celdas para la industria española']],
+  src:'Expansión · Castilla y León · press',lp:[-13,-6,'l']},
+
+ /* --- industria tradicional --- */
+ {id:'martorell',n:'SEAT · Cupra · VW (Martorell)',city:'Martorell · Barcelona',ccaa:'Cataluña',lat:41.50,lon:1.90,t:'vehiculo',cn:0,st:'operativa',stl:'En operación',flags:['DE','ES'],
+  desc:'Mayor planta del Grupo Volkswagen en España y referente de la electrificación del grupo en el país.',
+  f:[['Producción','470.000 uds (2025)'],['Modelos','SEAT León, Ibiza, Arona · Cupra Formentor, León, Raval · VW ID. Polo'],['Inversión del grupo','> 3.000 M€ en Martorell']],src:'VW Group · Expansión',lp:null},
+ {id:'pamplona',n:'Volkswagen Navarra (Landaben)',city:'Pamplona',ccaa:'Navarra',lat:42.81,lon:-1.68,t:'vehiculo',cn:0,st:'operativa',stl:'En operación',flags:['DE'],
+  desc:'Cuarta fábrica mundial de la marca Volkswagen por producción.',
+  f:[['Producción','274.688 uds (2024)'],['Modelos','T-Cross, Taigo, Polo · Škoda Epiq y VW ID.Cross (2026)']],src:'Volkswagen Navarra',lp:null},
+ {id:'vigo',n:'Stellantis Vigo',city:'Vigo · Pontevedra',ccaa:'Galicia',lat:42.22,lon:-8.84,t:'vehiculo',cn:0,st:'operativa',stl:'En operación',flags:['NL','FR','IT'],
+  desc:'La mayor fábrica de vehículos de España.',
+  f:[['Producción','516.000 uds (2024) · ≈560.000 (2025)'],['Grupo','Stellantis (Citroën, Peugeot, Fiat, Opel)']],src:'Expansión',lp:null},
+ {id:'palencia',n:'Renault Palencia',city:'Palencia',ccaa:'Castilla y León',lat:42.03,lon:-4.53,t:'vehiculo',cn:0,st:'operativa',stl:'En operación',flags:['FR'],
+  desc:'Planta de Renault en el norte peninsular.',f:[['Modelos','Renault Rafale, Symbioz y derivados'],['Grupo','≈350.000 uds/año en sus dos plantas españolas']],src:'Expansión · coches.net',lp:null},
+ {id:'valladolid-r',n:'Renault Valladolid',city:'Valladolid',ccaa:'Castilla y León',lat:41.62,lon:-4.72,t:'vehiculo',cn:0,st:'operativa',stl:'En operación',flags:['FR'],
+  desc:'Planta de Renault con futura asignación de vehículos eléctricos.',f:[['Grupo','≈350.000 uds/año con Palencia'],['Estado','Plan industrial eléctrico en preparación']],src:'Expansión · BOCYL',lp:null},
+ {id:'vitoria',n:'Mercedes-Benz Vitoria',city:'Vitoria-Gasteiz',ccaa:'País Vasco',lat:42.85,lon:-2.67,t:'vehiculo',cn:0,st:'operativa',stl:'En operación',flags:['DE'],
+  desc:'Furgonetas y derivados eléctricos de Mercedes-Benz.',f:[['Modelos','Vito, V-Class, EQV y la nueva VLE eléctrica'],['Baterías','Taller de baterías propio']],src:'Mercedes-Benz',lp:null},
+ {id:'sagunto',n:'PowerCo–Gotion (Sagunto)',short:'Sagunto · PowerCo–Gotion',city:'Sagunto · Valencia',ccaa:'C. Valenciana',lat:39.66,lon:-0.27,t:'bateria',cn:1,st:'construccion',stl:'Arranque 2027',flags:['DE','CN'],
+  desc:'Primera gigafactoría de celdas LFP anunciada en España. En septiembre de 2026 Gotion High-Tech compró a Volkswagen el 49% por 1.100 M€: la planta de Sagunto pasa a tener capital chino. Arranca en 2027 con dos bloques en lugar de uno.',
+  f:[['Capacidad','30 GWh en la fase inicial (2027) · hasta 40 GWh'],['Inversión','≈ 3.000 M€'],['Sociedad','PowerCo (VW) 51% · Gotion 49%'],['Empleo','1.500 directos en los dos primeros bloques'],['Alianza global','Gotion 51% / VW 49% en Eslovaquia (8,4 GWh) y cátodos LFP en Marruecos']],src:'elEconomista (28/09/2026) · PowerCo · comunicado de Gotion a la bolsa de Shenzhen',lp:[-13,-6,'l']},
+ {id:'azuqueca',n:'Liux (Azuqueca de Henares)',city:'Azuqueca de Henares · Guadalajara',ccaa:'Castilla-La Mancha',lat:40.57,lon:-3.03,t:'vehiculo',cn:0,st:'anunciada',stl:'Primera fase 2026',flags:['ES'],
+  desc:'Primera planta de vehículos nueva en España en más de tres décadas: el biplaza eléctrico Liux Big.',
+  f:[['Capacidad','15.000 uds/año desde 2028'],['Inversión','12 M€ iniciales · 30 M€ en 5 años'],['Empleo','185 directos y 300 indirectos']],src:'Expansión',lp:null}
+];
+
+const BRANDS=[
+ {n:'MG (SAIC)',v:28825,f:['CN','GB']},
+ {n:'BYD',v:26759,f:['CN']},
+ {n:'Ebro (con Chery)',v:16450,f:['ES','CN']},
+ {n:'Omoda (Chery)',v:15066,f:['CN']},
+ {n:'Leapmotor',v:3691,f:['CN']}
+];
+
+/* ============ MAPA ============ */
+const G=window.SPAIN_GEO, VB=G.viewBox;
+const NS='http://www.w3.org/2000/svg';
+const map=document.getElementById('map');
+map.setAttribute('viewBox',VB.join(' '));
+
+function proj(lon,lat){
+  const y=-180/Math.PI*Math.log(Math.tan(Math.PI/4+lat*Math.PI/360));
+  return [(lon-G.bbox.lon0)*G.bbox.scale,(y-G.bbox.mercY0)*G.bbox.scale];
+}
+
+/* provincias */
+const gProv=document.createElementNS(NS,'g');
+Object.keys(G.paths).forEach(name=>{
+  const p=document.createElementNS(NS,'path');
+  p.setAttribute('d',G.paths[name]);
+  p.setAttribute('class','prov');
+  const tt=document.createElementNS(NS,'title'); tt.textContent=name;
+  p.appendChild(tt); gProv.appendChild(p);
+});
+map.appendChild(gProv);
+
+/* recuadro Canarias */
+const ins=G.inset;
+const box=document.createElementNS(NS,'rect');
+box.setAttribute('x',ins.x-8); box.setAttribute('y',ins.y-8);
+box.setAttribute('width',ins.w+16); box.setAttribute('height',ins.h+16);
+box.setAttribute('rx',8); box.setAttribute('class','inset-box');
+map.appendChild(box);
+const bl=document.createElementNS(NS,'text');
+bl.setAttribute('x',ins.x-6); bl.setAttribute('y',ins.y-13); bl.setAttribute('class','inset-lab');
+bl.textContent='Canarias'; map.appendChild(bl);
+
+/* marcadores */
+const gMk=document.createElementNS(NS,'g'); map.appendChild(gMk);
+const gLb=document.getElementById('labels');
+const tip=document.getElementById('tip');
+const stage=document.getElementById('stage');
+let selected=null;
+
+function shape(kind,x,y,attrs){
+  let el;
+  if(kind==='bateria'){el=document.createElementNS(NS,'rect');el.setAttribute('x',x-5.6);el.setAttribute('y',y-5.6);el.setAttribute('width',11.2);el.setAttribute('height',11.2);el.setAttribute('rx',1.6);el.setAttribute('transform','rotate(45 '+x+' '+y+')');}
+  else if(kind==='componente'){el=document.createElementNS(NS,'polygon');el.setAttribute('points',[x+','+(y-6.8),(x+6.4)+','+(y+5.4),(x-6.4)+','+(y+5.4)].join(' '));el.setAttribute('stroke-linejoin','round');}
+  else {el=document.createElementNS(NS,'circle');el.setAttribute('cx',x);el.setAttribute('cy',y);el.setAttribute('r',6.4);}
+  Object.keys(attrs).forEach(k=>el.setAttribute(k,attrs[k]));
+  el.setAttribute('class','shp');
+  return el;
+}
+
+SITES.forEach(s=>{
+  const [x,y]=proj(s.lon,s.lat);
+  s._x=x; s._y=y;
+  const g=document.createElementNS(NS,'g');
+  g.setAttribute('class','mk'); g.dataset.id=s.id;
+
+  const halo=document.createElementNS(NS,'circle');
+  halo.setAttribute('cx',x);halo.setAttribute('cy',y);halo.setAttribute('r',13.5);
+  halo.setAttribute('class','halo'); g.appendChild(halo);
+
+  const fill=s.cn? (s.st==='operativa'? '#d11f33':'#ffffff') : '#d5dbe0';
+  const stroke=s.cn? '#d11f33':'#7d8b97';
+  const dash=(s.cn && s.st!=='operativa')? '4 3':'none';
+  const shp=shape(s.t,x,y,{fill:fill,stroke:stroke,'stroke-dasharray':dash});
+  g.appendChild(shp);
+
+  const hit=document.createElementNS(NS,'circle');
+  hit.setAttribute('cx',x);hit.setAttribute('cy',y);hit.setAttribute('r',16);
+  hit.setAttribute('class','hit'); g.appendChild(hit);
+
+  g.addEventListener('mouseenter',e=>showTip(s,e));
+  g.addEventListener('mousemove',e=>moveTip(e));
+  g.addEventListener('mouseleave',()=>tip.classList.remove('on'));
+  g.addEventListener('click',()=>select(s.id));
+  gMk.appendChild(g);
+
+  if(s.lp){
+    const [dx,dy,side]=s.lp;
+    const d=document.createElement('div');
+    d.className='lb '+(side==='l'?'l':'r');
+    d.style.left=((x+dx)/VB[2]*100)+'%';
+    d.style.top=((y+dy)/VB[3]*100)+'%';
+    d.innerHTML=flagMini(s.flags,15)+'<span>'+s.short+'</span>';
+    d.dataset.id=s.id;
+    d.addEventListener('click',()=>select(s.id));
+    gLb.appendChild(d);
+  }
+});
+
+function showTip(s,e){
+  tip.innerHTML='<div class="t1">'+s.n+'</div><div class="t2">'+s.city+' · '+s.ccaa+'</div>'+
+    '<div class="t3">'+flagMini(s.flags,16)+' &nbsp;'+s.stl+'</div>';
+  tip.classList.add('on'); moveTip(e);
+}
+function moveTip(e){
+  const r=stage.getBoundingClientRect();
+  let x=e.clientX-r.left+14, y=e.clientY-r.top+14;
+  if(x+280>r.width) x=r.width-286;
+  if(y+90>r.height) y=r.height-95;
+  tip.style.left=x+'px'; tip.style.top=y+'px';
+}
+
+/* ============ PANEL ============ */
+function select(id){
+  selected=id;
+  document.querySelectorAll('.mk').forEach(m=>m.classList.toggle('sel',m.dataset.id===id));
+  document.querySelectorAll('.lb').forEach(m=>m.classList.toggle('sel',m.dataset.id===id));
+  document.querySelectorAll('#idx button').forEach(b=>b.classList.toggle('sel',b.dataset.id===id));
+  const s=SITES.find(v=>v.id===id); if(!s) return;
+  const cls=s.st==='operativa'?'st-op':(s.st==='construccion'?'st-ob':'st-an');
+  document.getElementById('detail').innerHTML=
+    '<div class="status '+cls+'">'+s.stl+'</div>'+
+    '<h3>'+s.n+'</h3>'+
+    '<div class="where">'+s.city+' · '+s.ccaa+'</div>'+
+    '<div class="fls">'+flagRow(s.flags,20)+'</div>'+
+    '<p class="desc">'+s.desc+'</p>'+
+    '<dl class="facts">'+s.f.map(p=>'<dt>'+p[0]+'</dt><dd>'+p[1]+'</dd>').join('')+'</dl>'+
+    '<div class="src">Fuentes: '+s.src+'</div>';
+  document.getElementById('detail').scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+
+/* índice */
+const order={operativa:0,construccion:1,anunciada:2};
+const idx=document.getElementById('idx');
+SITES.filter(s=>s.cn).sort((a,b)=>(order[a.st]-order[b.st])||a.n.localeCompare(b.n)).forEach(s=>{
+  const b=document.createElement('button'); b.dataset.id=s.id;
+  b.innerHTML=flagMini(s.flags,15)+'<span class="nm">'+s.n.replace(/\s*\(.*\)/,'')+'</span><span class="yr">'+s.stl.replace('Anunciada · ','').replace('Arranque ','').replace('En ','')+'</span>';
+  b.addEventListener('click',()=>select(s.id));
+  idx.appendChild(b);
+});
+
+/* filtros */
+function applyFilters(){
+  const on={};
+  document.querySelectorAll('#filters input').forEach(b=>{on[b.dataset.f]=b.checked;});
+  if('labels' in on) gLb.style.display = on.labels ? '' : 'none';
+  SITES.forEach(s=>{
+    const vis = !!on[s.t] && (s.cn ? !!on.cn : !!on.trad);
+    const g=document.querySelector('.mk[data-id="'+s.id+'"]'); if(g) g.style.display = vis?'':'none';
+    const l=document.querySelector('.lb[data-id="'+s.id+'"]'); if(l) l.style.display = vis?'':'none';
+  });
+}
+document.getElementById('filters').addEventListener('change',applyFilters);
+
+/* ============ TARJETAS DE PROYECTOS ============ */
+const cards=document.getElementById('cards');
+const groups=[
+ {t:'Factorías de vehículos',cls:''},
+ {t:'Gigafactorías y plantas de baterías',cls:'t2'},
+ {t:'Componentes y electrónica',cls:'t3'}
+];
+const map0={vehiculo:0,bateria:1,componente:2};
+groups.forEach((gr,i)=>{
+  const keep=document.createElement('div'); keep.className='grp-keep'; cards.appendChild(keep);
+  const h=document.createElement('div'); h.className='grp-t'; h.textContent=gr.t; keep.appendChild(h);
+  let first=true;
+  SITES.filter(s=>s.cn&&map0[s.t]===i).forEach(s=>{
+    const d=document.createElement('div'); d.className='c3 '+gr.cls;
+    d.innerHTML='<h4>'+s.n+'</h4><div class="where">'+s.city+' · '+s.ccaa+'</div>'+
+      '<div class="fls">'+flagRow(s.flags,17)+'</div>'+
+      '<div class="status '+(s.st==='operativa'?'st-op':(s.st==='construccion'?'st-ob':'st-an'))+'" style="margin:0">'+s.stl+'</div>'+
+      '<ul>'+s.f.map(p=>'<li><b>'+p[0]+':</b> '+p[1]+'</li>').join('')+'</ul>';
+    d.style.cursor='pointer';
+    d.addEventListener('click',()=>{select(s.id);document.querySelector('.map-card').scrollIntoView({behavior:'smooth',block:'center'});});
+    if(first){keep.appendChild(d);first=false;}else{cards.appendChild(d);}
+  });
+});
+
+/* ============ BARRAS DE MARCAS ============ */
+const max=BRANDS[0].v;
+document.getElementById('brands').innerHTML=BRANDS.map(b=>
+ '<div class="hbar"><div class="r1"><span class="who">'+flagMini(b.f,15)+' '+b.n+'</span><span>'+b.v.toLocaleString('es-ES')+'</span></div>'+
+ '<div class="tr"><div class="fl2" style="width:'+(b.v/max*100).toFixed(1)+'%"></div></div></div>').join('');
+
+select('ebro');
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# PDFs (se entregan aparte, no forman parte de la web)
+*.pdf
+
+# Herramientas de generación (no se publican)
+tools/
+
+# Sistema
+Thumbs.db
+.DS_Store
