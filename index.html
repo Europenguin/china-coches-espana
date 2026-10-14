@@ -186,6 +186,11 @@
   footer{margin-top:38px;border-top:1px solid var(--line2);padding-top:16px;font-size:12.2px;color:var(--muted)}
   footer h4{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin:0 0 7px}
   .fgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+  .cert{display:flex;gap:18px;align-items:center;margin-top:18px;padding-top:15px;border-top:1px dashed var(--line2)}
+  .cert .sello{width:134px;height:134px;flex:0 0 auto}
+  .cert .ct b{display:block;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:5px}
+  .cert .ct p{margin:0 0 4px;font-size:12.4px;color:var(--muted);max-width:78ch}
+  .cert .ct p.who{color:var(--ink2);font-weight:700;margin-bottom:0}
   footer ul{margin:0;padding-left:17px;columns:2;column-gap:22px}
   footer li{margin-bottom:3px;break-inside:avoid}
 
@@ -259,7 +264,11 @@
     .tl .it::before{display:none}
     .tl .yr{position:static;display:block;margin-bottom:4px}
     .tl .dd{font-size:10.4px}
-    footer{break-inside:avoid;page-break-inside:avoid}
+    footer{break-inside:avoid;page-break-inside:avoid;margin-top:24px;padding-top:13px}
+    .cert{margin-top:11px;padding-top:10px;gap:14px}
+    .cert .sello{width:104px;height:104px}
+    .cert .ct b{font-size:11.5px;margin-bottom:3px}
+    .cert .ct p{font-size:11.2px;margin-bottom:3px}
   }
 </style>
 </head>
@@ -510,6 +519,14 @@
           <p>Las coordenadas son municipales o aproximadas para su localización en el mapa. «Capital chino» incluye propiedad total, joint ventures y acuerdos de producción con participación china: por eso las dos plantas españolas de Horse Powertrain (motores en Valladolid y cajas de cambios en Sevilla) cuentan como tales, por la participación del 45% de Geely en la sociedad con Renault (45%) y Aramco (10%). Las cifras de cuota de mercado varían según la fuente: algunos recuentos incluyen marcas con vínculo industrial chino (Ebro, DR) y otros solo marcas de origen. Datos recopilados de fuentes públicas a 30 de septiembre de 2026; los proyectos anunciados están sujetos a aprobación administrativa. En septiembre de 2026 Gotion High-Tech adquirió el 49% de la gigafactoría de PowerCo (Volkswagen) en Sagunto, que se contabiliza desde entonces como proyecto con capital chino.</p>
         <p>Mapa: límites provinciales a partir de datos abiertos (GeoJSON de provincias españolas), proyección Mercator con recuadro de Canarias no escala.</p>
         <p>Capacidad instalada: estimación propia, no existe dato oficial por planta. Se parte de la capacidad declarada por el fabricante o, en su defecto, del máximo histórico reciente de producción, y se mantiene constante salvo anuncio público de cambio. «Con capital chino» contabiliza cada planta por su propietario en cada año: Almussafes contaba en la columna europea hasta la entrada en operación de la JV Ford–Geely (1S 2027). Se excluyen Santana–BAIC, el Leapmotor de Figueruelas y Liux por no publicar capacidad, así como los utilitarios industriales de Iveco y Stellantis.</p>
+      </div>
+    </div>
+    <div class="cert">
+      <img class="sello" src="sello-europenguin.png" alt="Sello: certificado de calidad Europenguin 2026">
+      <div class="ct">
+        <b>Certificado de calidad · Europenguin</b>
+        <p>Cada dato de esta infografía —plantas, capacidad, cuota y cronología— procede de las fuentes citadas: prensa especializada, comunicados oficiales, registros públicos y notas de los propios fabricantes. Sin cifras inventadas ni material de terceros.</p>
+        <p class="who">Datos verificados a 30 de septiembre de 2026 · 23 plantas · 8 CCAA</p>
       </div>
     </div>
   </footer>

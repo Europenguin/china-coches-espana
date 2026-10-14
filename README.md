@@ -19,15 +19,17 @@ Datos actualizados a **30 de septiembre de 2026**.
 | Gráficos | Evolución de cuota 2024–2026, marcas más vendidas y capacidad instalada (1,6% → 22%), cada uno con su bloque de análisis |
 | Cronología | 2024–2031: de la alianza Chery–Nissan al 13% de la producción nacional |
 | Fuentes y notas | Medio a medio, comunicados oficiales y metodología (qué cuenta como «capital chino», cómo se estima la capacidad) |
+| Certificado | Sello circular «Certificado de calidad» en el pie, junto a la fecha de verificación de los datos |
 
 ## Estructura
 
-Solo dos archivos, sin dependencias ni build:
+Sin dependencias ni build:
 
 ```
-index.html        HTML + CSS + JS (mapa, tarjetas, gráficos, filtros, estilos de impresión)
-mapa-espana.js    window.SPAIN_GEO → límites provinciales (GeoJSON abierto),
-                  proyección Mercator, viewBox 1000×821,7 y recuadro de Canarias
+index.html             HTML + CSS + JS (mapa, tarjetas, gráficos, filtros, estilos de impresión)
+mapa-espana.js         window.SPAIN_GEO → límites provinciales (GeoJSON abierto),
+                       proyección Mercator, viewBox 1000×821,7 y recuadro de Canarias
+sello-europenguin.png  sello circular «Certificado de calidad» del pie
 README.md
 ```
 
