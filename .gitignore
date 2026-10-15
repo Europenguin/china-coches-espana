@@ -7,3 +7,9 @@ tools/
 # Sistema
 Thumbs.db
 .DS_Store
+
+# Archivos locales no web
+Europeng*.jpg
+Europeng*.png
+Plantilla*.pptx
+agents.md
